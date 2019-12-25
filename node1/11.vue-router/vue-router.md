@@ -29,3 +29,13 @@
 ### location.hash 方法
 
 - localtion.has=url
+
+## 路由传参
+
+1.使用占位符 path:'/user/:id'
+
+2.router-link 绑定属性
+
+## 路由懒加载
+
+1.component:()=>import('../components/componentName') 使用 import 函数
