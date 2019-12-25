@@ -39,3 +39,11 @@
 ## 路由懒加载
 
 1.component:()=>import('../components/componentName') 使用 import 函数
+
+## 导航守卫
+
+1.路由管理对象的 beforeEach
+
+2.路由内守卫 beforeEnter
+
+3.组件内守卫 beforeRouteEnter
