@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>slot插槽 </title>
+</head>
+
+<body>
+    <div id="app">
+        <temp><em style="color:red;">普通插槽直接替换slot内容</em></temp>
+        <hr>
+        <temp1>
+
+            <span slot="left">这是一个具名插槽,根据slot著名其所使用插槽名</span>
+        </temp1>
+        <hr>
+        <temp2>
+            <template slot-scope="slot">
+                <p>{{slot.data.join('--')}}</p>
+            </template>
+        </temp2>
+        <hr>
+        <temp3 ref="temp3">
+            <template slot-scope="slot" slot="right">
+                <p>{{slot.movies.map(function(item){return "《"+item+"》"}).join('  ')}}</p>
+            </template>
+        </temp3>
+    </div>
+    <!-- 普通插槽 -->
+    <template id="temp">
+        <div>
+            <h2>普通插槽</h2>
+            <p>这是一个普通插槽</p>
+            <slot><span>默认值</span></slot>
+        </div>
+    </template>
+    <!-- 具名插槽 -->
+    <template id="temp1">
+        <div>
+            <slot name="left">left</slot>
+            <slot name="center">center</slot>
+            <slot name="right">right</slot>
+        </div>
+    </template>
+
+    <!-- 作用域插槽 -->
+    <template id="temp2">
+        <div>
+            <slot :data="movies">
+                <ul>
+                    <li v-for="(item, index) in movies" :key="index">{{item}}</li>
+                </ul>
+            </slot>
+        </div>
+    </template>
+
+    <!-- 具名作用域插槽 -->
+    <template id="temp3">
+        <div>
+            <slot :data="movies">
+                <ul>
+                    <li v-for="(item, index) in movies" :key="index">{{item}}</li>
+                </ul>
+            </slot>
+            <slot name="right" :movies="movies">
+                <ul>
+                    <li v-for="(item, index) in movies" :key="index">{{item}}</li>
+                </ul>
+            </slot>
+        </div>
+    </template>
+</body>
+<script src="./../vue.js"></script>
+<script src="./index.js"></script>
+
+</html>

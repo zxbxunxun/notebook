@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>watch</title>
+</head>
+
+<body>
+    <div id="app">
+        <temp :number1="num1" :number2="num2" @changenumber1="changenumber1" @changenumber2="changenumber2" ref="numbers"></temp>
+    </div>
+    <template id="temp">
+        <div>
+            <p>{{numb1}}</p>
+            <input type="text" name="username" id="username" v-model="numb1">
+            <p>{{numb2}}</p>
+            <input type="text" name="info" id="info" v-model="numb2">
+            <p>总和：{{total}}</p>
+        </div>
+    </template>
+</body>
+<script src="./../vue.js"></script>
+<script src="./index.js"></script>
+
+</html>

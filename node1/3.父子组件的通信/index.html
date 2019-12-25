@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>父子组件的通信</title>
+</head>
+
+<body>
+    <div id="app">
+        <temp :cmovies="movies" :cmessage="messages">
+        </temp>
+        <comp :categories="categories" @clickCategory="clickCategory"></comp>
+        <count :counter="count" @incrementclick="incrementclick" @decrementclick="decrementclick"></count>
+    </div>
+    <template id="temp">
+        <div>
+            <h2>{{cmessage}}</h2>
+            <ul>
+                <li v-for="(item, index) in cmovies" :key="index">{{item}}</li>
+            </ul>
+        </div>
+    </template>
+    <!-- 子组件向父组件通信 -->
+    <template id="comp">
+        <div>
+            <h2>子组件向父组件通信</h2>
+            <p>$emit自定义事件</p>
+            <ul v-for="(item, index) in categories" :key="index">
+                <li @click="clickItem(item)" style="cursor: pointer;border-bottom: 1px solid #000;max-width: 200px;">
+                    {{item.name}}</li>
+            </ul>
+        </div>
+    </template>
+
+    <!-- 计数器 -->
+    <template id="count">
+        <div>
+            <button @click="increment(counter)">+</button>
+            <span>{{counter}}</span>
+            <button @click="decrement(counter,$event)">-</button>
+        </div>
+    </template>
+
+</body>
+<script src="./../vue.js"></script>
+<script src="./index.js"></script>
+
+</html>

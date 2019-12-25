@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>组件数据双向绑定并传递</title>
+</head>
+
+<body>
+    <div id="app">
+        <temp :number1="num1" :number2="num2" @changenum1="pChangeNum1" @changenum2="pChangeNum2"></temp>
+    </div>
+    <template id="temp">
+        <div>
+            <p>{{numbers1}}</p>
+            <input type="text" name="" id="" :value="numbers1" @input="inputNum1">
+            <p>{{numbers2}}</p>
+            <input type="text" name="" id="" :value="numbers2" @input="inputNum2">
+        </div>
+    </template>
+
+   
+</body>
+<script src="./../vue.js"></script>
+<script src="./index.js"></script>
+
+</html>
