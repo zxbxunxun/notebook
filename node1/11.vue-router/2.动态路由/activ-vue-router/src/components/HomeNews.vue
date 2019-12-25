@@ -11,7 +11,20 @@
 
 <script>
 export default {
-  name: 'homenews'
+  name: 'homenews',
+  data() {
+    return {
+      path: '/home/news'
+    };
+  },
+  activated() {
+    window.console.log('activated');
+  },
+  beforeRouteLeave(to) {
+    this.path = to.path;
+    // next();
+    window.console.log(this.path);
+  }
 };
 </script>
 

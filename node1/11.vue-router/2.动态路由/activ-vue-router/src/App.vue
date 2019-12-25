@@ -4,7 +4,9 @@
     <router-link :to="'/user/' + userName">USER</router-link>
     <button @click="toRouter1">router1</button>
     <button @click="toRouter2">router2</button>
-    <router-view> </router-view>
+    <keep-alive>
+      <router-view> </router-view>
+    </keep-alive>
   </div>
 </template>
 
