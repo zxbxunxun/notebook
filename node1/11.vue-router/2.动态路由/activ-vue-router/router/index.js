@@ -39,7 +39,12 @@ const routes = [
   },
   {
     path: '/user/id=:id',
-    component: User
+    component: User,
+    beforeEnter: (to, from, next) => {
+      window.console.log(to);
+      window.document.title = to.params.id || '个人用户';
+      next();
+    }
   },
   {
     path: '/router1/id=:id',
@@ -54,5 +59,10 @@ const router = new VueRouter({
   routes,
   linkActiveClass: 'active',
   mode: 'history'
+});
+router.beforeEach((to, from, next) => {
+  window.console.log(to);
+  window.document.title = to.params.id || '动态路由';
+  next();
 });
 export default router;
