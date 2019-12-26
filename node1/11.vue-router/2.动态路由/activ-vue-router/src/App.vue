@@ -1,10 +1,11 @@
 <template>
   <div id="app">
     <router-link to="/home">HOME</router-link>
-    <router-link :to="'/user/' + userName">USER</router-link>
+    <router-link :to="'/user/id=' + userName">USER</router-link>
     <button @click="toRouter1">router1</button>
     <button @click="toRouter2">router2</button>
-    <keep-alive>
+    <!-- 排除某个路由组件keep-alive -->
+    <keep-alive exclude="user">
       <router-view> </router-view>
     </keep-alive>
   </div>
@@ -37,4 +38,14 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+* {
+  color: orange;
+}
+a {
+  text-decoration: none;
+}
+a.active {
+  color: red;
+}
+</style>

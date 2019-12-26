@@ -2,14 +2,23 @@
   <div>
     <h2>User</h2>
     <p>User page</p>
-    <p>hello, {{ $route.params.id }}</p>
+    <p>
+      hello, <span class="username">{{ $route.params.id }}</span>
+    </p>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'user'
+  name: 'user',
+  created() {
+    window.console.log('created');
+  }
 };
 </script>
 
-<style></style>
+<style>
+.username {
+  color: green;
+}
+</style>
