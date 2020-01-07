@@ -1,5 +1,5 @@
 <template>
-  <div class="tab-bar-item active">
+  <div class="tab-bar-item" :class="{ active: isActivePath }" @click="go2path">
     <div class="item-icon">
       <slot name="item-icon"></slot>
     </div>
@@ -18,6 +18,17 @@ export default {
       default() {
         return 'red';
       }
+    },
+    path: String
+  },
+  computed: {
+    isActivePath() {
+      return this.$route.path === this.path;
+    }
+  },
+  methods: {
+    go2path() {
+      this.$router.push(this.path);
     }
   }
 };
@@ -38,7 +49,7 @@ export default {
 .item-text {
   font-size: 10px;
 }
-.active{
+.active {
   color: #2d8330;
 }
 </style>

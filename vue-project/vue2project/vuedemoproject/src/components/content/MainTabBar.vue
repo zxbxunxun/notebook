@@ -1,29 +1,29 @@
 <template>
   <div>
     <TabBar>
-      <TabBarItem activeColor="#2d8330">
+      <TabBarItem path="/home">
         <svg class="icon" aria-hidden="true" slot="item-icon">
-          <use xlink:href="#icon-aixin"></use>
+          <use xlink:href="#icon-shouye"></use>
         </svg>
-        <span slot="item-text">爱心</span>
+        <span slot="item-text">首页</span>
       </TabBarItem>
-      <TabBarItem activeColor="#2d8330">
+      <TabBarItem path="/category">
         <svg class="icon" aria-hidden="true" slot="item-icon">
-          <use xlink:href="#icon-aixin"></use>
+          <use xlink:href="#icon-all"></use>
         </svg>
-        <span slot="item-text">爱心</span>
+        <span slot="item-text">分类</span>
       </TabBarItem>
-      <TabBarItem activeColor="#2d8330">
+      <TabBarItem path="/cart">
         <svg class="icon" aria-hidden="true" slot="item-icon">
-          <use xlink:href="#icon-aixin"></use>
+          <use xlink:href="#icon-dingdan"></use>
         </svg>
-        <span slot="item-text">爱心</span>
+        <span slot="item-text">购物车</span>
       </TabBarItem>
-      <TabBarItem activeColor="#2d8330">
+      <TabBarItem path="/profile">
         <svg class="icon" aria-hidden="true" slot="item-icon">
-          <use xlink:href="#icon-aixin"></use>
+          <use xlink:href="#icon-wodeguanzhu"></use>
         </svg>
-        <span slot="item-text">爱心</span>
+        <span slot="item-text">我的</span>
       </TabBarItem>
     </TabBar>
   </div>
